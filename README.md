@@ -10,13 +10,13 @@ Translated raw transactional data into meaningful insights to support data-drive
 1. Overview
 2. Project Objective
 3. Dataset Description
-   (a) Main Table
+        (a) Main Table
 4. Tools & Technologies Used
 5. Data Relationship
 6. Key bUsiness Questions
-   (a) Basci Analysis
-   (b) Product Performance
-   (c) Customer Behaviour
+        (a) Basci Analysis
+        (b) Product Performance
+        (c) Customer Behaviour
 7. Sample SQL Query
 8. Key Insights
 9. Business Recommendations
