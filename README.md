@@ -4,13 +4,13 @@ Analyzed pizza sales data using SQL to uncover sales patterns, product performan
 Translated raw transactional data into meaningful insights to support data-driven decision making.
 
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Table of Content
 1. Overview
 2. Project Objective
 3. Dataset Description
-  (a) Main Table
+   (a) Main Table
 4. Tools & Technologies Used
 5. Data Relationship
 6. Key bUsiness Questions
@@ -19,13 +19,12 @@ Translated raw transactional data into meaningful insights to support data-drive
    (c) Customer Behaviour
 7. Sample SQL Query
 8. Key Insights
+9. Business Recommendations
+10. Skill Demonstrated
+11. Conclusion
 
 
-
-
-
-
--------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Overview
 
@@ -37,7 +36,7 @@ Through structured SQL queries, the project explores key business metrics such a
 𝟑. 𝐒𝐚𝐥𝐞𝐬 𝐏𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬
 allowing a systematic approach to understanding the dataset.
 
--------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Project Objective 
 
@@ -50,7 +49,7 @@ The main goals of this analysis are:
 * Discover 𝐩𝐞𝐚𝐤 𝐨𝐫𝐝𝐞𝐫 𝐡𝐨𝐮𝐫𝐬 𝐚𝐧𝐝 𝐛𝐮𝐬𝐢𝐞𝐬𝐭 𝐝𝐚𝐲𝐬
 * Generate insights that can support 𝐛𝐮𝐬𝐢𝐧𝐞𝐬𝐬 𝐝𝐞𝐜𝐢𝐬𝐢𝐨𝐧 𝐦𝐚𝐤𝐢𝐧𝐠
   
--------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Dataset Description
 
@@ -100,7 +99,7 @@ Columns include:
 * category
 * ingredients
 
--------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 ## Tools & Technologies Used
@@ -116,7 +115,7 @@ SQL was used extensively for:
 * Filtering and grouping
 * Business metric calculations.
 
--------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 ## Data Relationship
@@ -129,7 +128,8 @@ The tables are connected using 𝐩𝐫𝐢𝐦𝐚𝐫𝐲 𝐚𝐧𝐝 𝐟�
 
 These relationships allow the dataset to be combined and analyzed effectively.
 
--------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
  ## Key Business Questions
@@ -155,7 +155,7 @@ The following analytical questions were explored using SQL queries:
 9. What are the 𝐩𝐞𝐚𝐤 𝐨𝐫𝐝𝐞𝐫𝐢𝐧𝐠 𝐡𝐨𝐮𝐫𝐬 𝐝𝐮𝐫𝐢𝐧𝐠 𝐭𝐡𝐞 𝐝𝐚𝐲?
 10. Which 𝐝𝐚𝐲𝐬 𝐨𝐟 𝐭𝐡𝐞 𝐰𝐞𝐞𝐤 𝐫𝐞𝐜𝐞𝐢𝐯𝐞 𝐭𝐡𝐞 𝐦𝐨𝐬𝐭 𝐨𝐫𝐝𝐞𝐫𝐬?
 
--------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 ## Sample SQL Query
@@ -180,7 +180,7 @@ JOIN pizza_types AS pt
 
 This query compare different 𝐬𝐢𝐳𝐞 𝐨𝐟 𝐭𝐡𝐞 𝐬𝐚𝐦𝐞 𝐩𝐢𝐳𝐳𝐚 𝐭𝐲𝐩𝐞 to calculate the 𝐩𝐫𝐢𝐜𝐞 𝐝𝐢𝐟𝐟𝐞𝐫𝐞𝐧𝐜𝐞 𝐛𝐞𝐭𝐰𝐞𝐞𝐧 𝐡𝐢𝐠𝐡𝐞𝐫-𝐩𝐫𝐢𝐜𝐞𝐝 𝐚𝐧𝐝 𝐥𝐨𝐰𝐞𝐫 𝐩𝐫𝐢𝐜𝐞𝐝 𝐩𝐢𝐳𝐳𝐚𝐬.
 
-===============================================================================================================================
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Key Insights
 
@@ -201,5 +201,39 @@ Some pizza categories consistently generate higher sales compared to others.
 𝟓. 𝐑𝐞𝐯𝐞𝐧𝐮𝐞 𝐂𝐨𝐧𝐜𝐞𝐧𝐭𝐫𝐚𝐭𝐢𝐨𝐧
 Top performing pizzas generate a large portion of the total revenue, which highlights the importance of focusing on high-performing products.
 
-===============================================================================================================================
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Business Recommendations
+
+Based on the analysis, the following recommendations can help improve business performance:
+
+* Promote 𝐭𝐨𝐩-𝐬𝐞𝐥𝐥𝐢𝐧𝐠 𝐩𝐢𝐳𝐳𝐚𝐬 through targeted marketing campaigns
+* Offer 𝐛𝐮𝐧𝐝𝐥𝐞 𝐝𝐞𝐚𝐥𝐬 𝐨𝐫 𝐜𝐨𝐦𝐛𝐨𝐬 during peak ordering hours
+* Optimize menu offerings by focusing on 𝐡𝐢𝐠𝐡-𝐫𝐞𝐯𝐞𝐧𝐮𝐞 𝐩𝐢𝐳𝐳𝐚 𝐜𝐚𝐭𝐞𝐠𝐨𝐫𝐢𝐞𝐬
+* Introduce promotions for 𝐥𝐞𝐬𝐬 𝐩𝐨𝐩𝐮𝐥𝐚𝐫 𝐩𝐢𝐳𝐳𝐚𝐬 to increase their sales
+* Improve inventory planning based on 𝐩𝐨𝐩𝐮𝐥𝐚𝐫 𝐩𝐢𝐳𝐳𝐚 𝐬𝐢𝐳𝐞𝐬 𝐚𝐧𝐝 𝐜𝐚𝐭𝐞𝐠𝐨𝐫𝐢𝐞𝐬
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Skills Demonstrated
+
+This project demonstrates several important 𝐝𝐚𝐭𝐚 𝐚𝐧𝐚𝐥𝐲𝐬𝐭 𝐬𝐤𝐢𝐥𝐥𝐬:
+
+* SQL querying and data manipulation
+* Data exploration and analysis
+* Business problem solving
+* Analytical thinking
+* Translating data into business insights
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Conclusion
+
+This project shows how SQL can be used to analyze transactional sales data and extract meaningful insights for business decision-making.
+
+By analyzing pizza sales data, I'm able to understand customer behavior, identify high-performing products, and discover patterns that can help improve overall sales strategy.
+
+The analysis highlights the importance of 𝐝𝐚𝐭𝐚-𝐝𝐫𝐢𝐯𝐞𝐧 𝐝𝐞𝐜𝐢𝐬𝐢𝐨𝐧 𝐦𝐚𝐤𝐢𝐧𝐠 𝐢𝐧 𝐭𝐡𝐞 𝐫𝐞𝐬𝐭𝐚𝐮𝐫𝐚𝐧𝐭 𝐢𝐧𝐝𝐮𝐬𝐭𝐫y.
+
 
