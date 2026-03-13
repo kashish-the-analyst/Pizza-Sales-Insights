@@ -10,13 +10,22 @@ Translated raw transactional data into meaningful insights to support data-drive
 1. Overview
 2. Project Objective
 3. Dataset Description
+  (a) Main Table
+4. Tools & Technologies Used
+5. Data Relationship
+6. Key bUsiness Questions
+   (a) Basci Analysis
+   (b) Product Performance
+   (c) Customer Behaviour
+7. Sample SQL Query
+8. Key Insights
 
 
 
 
 
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------
 
 ## Overview
 
@@ -28,7 +37,7 @@ Through structured SQL queries, the project explores key business metrics such a
 𝟑. 𝐒𝐚𝐥𝐞𝐬 𝐏𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞 𝐀𝐧𝐚𝐥𝐲𝐬𝐢𝐬
 allowing a systematic approach to understanding the dataset.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------
 
 ## Project Objective 
 
@@ -41,7 +50,7 @@ The main goals of this analysis are:
 * Discover 𝐩𝐞𝐚𝐤 𝐨𝐫𝐝𝐞𝐫 𝐡𝐨𝐮𝐫𝐬 𝐚𝐧𝐝 𝐛𝐮𝐬𝐢𝐞𝐬𝐭 𝐝𝐚𝐲𝐬
 * Generate insights that can support 𝐛𝐮𝐬𝐢𝐧𝐞𝐬𝐬 𝐝𝐞𝐜𝐢𝐬𝐢𝐨𝐧 𝐦𝐚𝐤𝐢𝐧𝐠
   
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------
 
 ## Dataset Description
 
@@ -91,7 +100,7 @@ Columns include:
 * category
 * ingredients
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------
 
 
 ## Tools & Technologies Used
@@ -107,10 +116,90 @@ SQL was used extensively for:
 * Filtering and grouping
 * Business metric calculations.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------
 
 
 ## Data Relationship
 
+The tables are connected using 𝐩𝐫𝐢𝐦𝐚𝐫𝐲 𝐚𝐧𝐝 𝐟𝐨𝐫𝐞𝐢𝐠𝐧 𝐤𝐞𝐲𝐬:
 
+* orders.order_id → order_details.order_id
+* order_details.pizza_id → pizzas.pizza_id
+* pizzas.pizza_type_id → pizza_types.pizza_type_id
+
+These relationships allow the dataset to be combined and analyzed effectively.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+ ## Key Business Questions
+
+The following analytical questions were explored using SQL queries:
+
+### Basic Analysis
+
+1. What is the 𝐭𝐨𝐭𝐚𝐥 𝐧𝐮𝐦𝐛𝐞𝐫 𝐨𝐟 𝐨𝐫𝐝𝐞𝐫𝐬 𝐩𝐥𝐚𝐜𝐞𝐝?
+2. What is the 𝐭𝐨𝐭𝐚𝐥 𝐫𝐞𝐯𝐞𝐧𝐮𝐞 𝐠𝐞𝐧𝐞𝐫𝐚𝐭𝐞𝐝* 𝐟𝐫𝐨𝐦 𝐩𝐢𝐳𝐳𝐚 𝐬𝐚𝐥𝐞𝐬?
+3. What is the 𝐚𝐯𝐞𝐫𝐚𝐠𝐞 𝐨𝐫𝐝𝐞𝐫 𝐯𝐚𝐥𝐮𝐞?
+
+### Product Performance
+
+4. Which pizza has the 𝐡𝐢𝐠𝐡𝐞𝐬𝐭 𝐩𝐫𝐢𝐜𝐞?
+5. What are the 𝐭𝐨𝐩 𝟓 𝐦𝐨𝐬𝐭 𝐨𝐫𝐝𝐞𝐫𝐞𝐝 𝐩𝐢𝐳𝐳𝐚𝐬?
+6. Which pizza category generates the 𝐡𝐢𝐠𝐡𝐞𝐬𝐭 𝐬𝐚𝐥𝐞𝐬 𝐯𝐨𝐥𝐮𝐦𝐞?
+7. Which pizza types generate the 𝐡𝐢𝐠𝐡𝐞𝐬𝐭 𝐫𝐞𝐯𝐞𝐧𝐮𝐞?
+
+### Customer Behavior
+
+8. What is the 𝐦𝐨𝐬𝐭 𝐜𝐨𝐦𝐦𝐨𝐧 𝐩𝐢𝐳𝐳𝐚 𝐬𝐢𝐳𝐞 𝐨𝐫𝐝𝐞𝐫𝐞𝐝?
+9. What are the 𝐩𝐞𝐚𝐤 𝐨𝐫𝐝𝐞𝐫𝐢𝐧𝐠 𝐡𝐨𝐮𝐫𝐬 𝐝𝐮𝐫𝐢𝐧𝐠 𝐭𝐡𝐞 𝐝𝐚𝐲?
+10. Which 𝐝𝐚𝐲𝐬 𝐨𝐟 𝐭𝐡𝐞 𝐰𝐞𝐞𝐤 𝐫𝐞𝐜𝐞𝐢𝐯𝐞 𝐭𝐡𝐞 𝐦𝐨𝐬𝐭 𝐨𝐫𝐝𝐞𝐫𝐬?
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+## Sample SQL Query
+
+Example query to Price differences between different sizes of the same pizza
+
+SELECT 
+     p1.pizza_type_id AS id_1,
+     pt.name AS pizza_name,
+     p1.size AS size_1,
+     p1.price AS price_1,
+     p2.size AS size_2,
+     p2.price AS price_2,
+     (p1.price - p2.price) AS price_imbalance
+FROM pizzas AS p1
+JOIN pizzas AS p2
+   ON p1.pizza_type_id = p2.pizza_type_id
+   AND p1.price > p2.price 
+JOIN pizza_types AS pt 
+   ON p1.pizza_type_id = pt.pizza_type_id;
+
+
+This query compare different 𝐬𝐢𝐳𝐞 𝐨𝐟 𝐭𝐡𝐞 𝐬𝐚𝐦𝐞 𝐩𝐢𝐳𝐳𝐚 𝐭𝐲𝐩𝐞 to calculate the 𝐩𝐫𝐢𝐜𝐞 𝐝𝐢𝐟𝐟𝐞𝐫𝐞𝐧𝐜𝐞 𝐛𝐞𝐭𝐰𝐞𝐞𝐧 𝐡𝐢𝐠𝐡𝐞𝐫-𝐩𝐫𝐢𝐜𝐞𝐝 𝐚𝐧𝐝 𝐥𝐨𝐰𝐞𝐫 𝐩𝐫𝐢𝐜𝐞𝐝 𝐩𝐢𝐳𝐳𝐚𝐬.
+
+===============================================================================================================================
+
+## Key Insights
+
+After analyzing the dataset using SQL queries, several important insights were discovered:
+
+𝟏. 𝐏𝐞𝐚𝐤 𝐎𝐫𝐝𝐞𝐫𝐢𝐧𝐠 𝐓𝐢𝐦𝐞
+Most pizza orders occur during 𝐥𝐮𝐧𝐜𝐡 𝐡𝐨𝐮𝐫𝐬 𝐚𝐧𝐝 𝐞𝐯𝐞𝐧𝐢𝐧𝐠 𝐡𝐨𝐮𝐫𝐬, indicating high demand during meal times.
+
+𝟐. 𝐏𝐨𝐩𝐮𝐥𝐚𝐫 𝐏𝐢𝐳𝐳𝐚 𝐒𝐢𝐳𝐞𝐬
+Large size pizzas contribute significantly to total sales, suggesting that customers prefer larger portions.
+
+𝟑. 𝐁𝐞𝐬𝐭-𝐒𝐞𝐥𝐥𝐢𝐧𝐠 𝐏𝐢𝐳𝐳𝐚𝐬
+A small number of pizza types account for a large share of total orders, indicating strong customer preference for certain menu items.
+
+𝟒. 𝐂𝐚𝐭𝐞𝐠𝐨𝐫𝐲 𝐏𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞
+Some pizza categories consistently generate higher sales compared to others.
+
+𝟓. 𝐑𝐞𝐯𝐞𝐧𝐮𝐞 𝐂𝐨𝐧𝐜𝐞𝐧𝐭𝐫𝐚𝐭𝐢𝐨𝐧
+Top performing pizzas generate a large portion of the total revenue, which highlights the importance of focusing on high-performing products.
+
+===============================================================================================================================
 
